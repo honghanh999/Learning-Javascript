@@ -1,0 +1,81 @@
+<!--Sets
+- Content
++ Each value can only occur once in a Set
+- Set methods
+new Set()
+add()
+delete()
+has() -> Returns true if a value exists in the Set
+forEach() -> Invokes a callback for each element in the Set
+values() -> Returns an iterator with all the values in a Set (list all elements)
+- Property
+size -> Returns the number of elements in a Set
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Sets</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+
+    <script>
+        // new Set
+        const letters = new Set (["a", "b", "c"]);
+        document.getElementById("demo").innerHTML = "letters.size" + letters.size;
+        let text = "";
+        for (const i of letters) {
+            text +="for (const i of letters) " + i + "<br>";
+        }
+        document.getElementById("demo1").innerHTML = text;
+
+        // create an empty set and add values to the set
+        const letters2 = new Set();
+        letters2.add("b");
+        letters2.add("c");
+        letters2.add("d");
+        letters2.add("e");
+        document.getElementById("demo2").innerHTML = "letters2.size " + letters2.size;
+        
+        // create a set and add variables
+        const letters3 = new Set();
+        const a = "a";
+        const b = "b";
+        const c = "c";
+
+        letters3.add(a);
+        letters3.add(b);
+        letters3.add(c);
+
+        document.getElementById("demo3").innerHTML = "letters3.size " + letters3.size;
+
+        // the add method
+        const letters4 = new Set(["a", "b", "c"]);
+        letters4.add("d");
+        letters4.add("e");
+        document.getElementById("demo4").innerHTML = "letters4.size(add method) " + letters4.size
+        
+        // list all elements by forEach()
+        const letters5 = new Set (["a", "b", "c"]);
+        let text5 = "";
+        function myfunct (value, index, array) {
+            text5 += "letters5.forEach(myfunct) " + value + "<br>";
+        }
+        letters5.forEach(myfunct)
+        document.getElementById("demo4").innerHTML = text5;
+
+
+        // the values() method
+        const letters6 = new Set (["a", "b", "c"]);
+        let text6 = "";
+        for (const n of letters6.values()) {
+            text6 += n + "<br>"
+        }
+        document.getElementById("demo5").innerHTML = " for (const n of letters6.values())" + "<br>" + text6;
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!--Break and Continue
+- break: "jumps out" of a loop or a swithch
+- continue: skip one loop element
+- JS labels: "jumps out" any code block
++ Syntax
+break labelname;
+continue labelname;
+*** A code block is a block of code between {and}
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Break and Continue</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+
+    <script>
+        // break
+        let text = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 2) {break;}
+            text +=" if (i === 2) {break;}" + i + "<br>"
+        }
+        document.getElementById("demo").innerHTML = text
+        
+        // continue
+        let text1 = "";
+        for (let y = 0; y < 10; y++) {
+            if (y === 2) {continue;}
+            text1 += "if (y === 2) {continue;} " + y + "<br>"
+        }
+        document.getElementById("demo1").innerHTML = text1
+    
+        // Labels
+        list = ["Ngo", "Thi", "Hong", "Hanh"];
+        text2 = ""
+        list: {
+            text2 += list[0] + "<br>";
+            text2 += list[1] + "<br>";
+            break list;
+            text2 += list[2] + "<br>";
+            text2 += list[3] + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = "break list (labels)" +"<br>" + text2;
+        
+    </script>
+</body>
+</html>

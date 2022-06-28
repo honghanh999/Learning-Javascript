@@ -1,0 +1,40 @@
+<!-- Iterables
+- Content
++ Iterables are iterable objects (like Arrays)
++ Iterables can be accessed with simple and efficient code
++ Iterables can be iterated over with for..of loops
+- Iterating over a string, array, set, map
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Iterables</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+
+    <script>
+        // string
+        let text = "";
+        const name = "Honghanh";
+        for (const x of name) {
+            text += "for (const x of name) " + x + "<br>"
+        };
+        document.getElementById("demo").innerHTML = text;
+
+        // array
+        let text2 = "";
+        const letters = ["a", "b", "c"];
+        for (const y of letters) {
+            text2 += "for (const y of letters) " + y + "<br>"
+        }
+        document.getElementById("demo1").innerHTML = text2;
+        
+        // set and map are the same 
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!-- JavaScript Type Conversion
+- Converting string to numbers: using method Number()
+Number("3.14") -> return 3.14
+Number(" ") -> return 0
+Number("") -> return 0
+Number("99 77") -> return NaN
++ Number method: to convert string to number
+Number(): Returns a number, converted from its argument
+parseFloat(): Parses a string and returns a floating point number
+parseIn(): Parses a string and returns an integer
++ The unary + operator can be used to convert a variable to a number (unary: toán tử một ngôi)
+- Convert num to string
++ Using global method String()
++ The number method toString() 
++ toExponential(): Returns a string, with a number rounded and written using exponential notation
++ toFixed(): Returns a string, with a number rounded and written with a specified number of decimals
++ toPrecision(): Returns a string, with a number written with a specified length
+- Convert dates to numbers
++ Number()
++ getTime()
+- Convert dates to strings
++ String()
++ toString()
++ getDate, getMonth, getFullYear(),...
+- Convert booleans to numbers
++ Number(false) -> 0
++ Number(true) -> 1
+- Convert booleans to strings
++ String(false) -> return "false"
++ String(true) -> return "true"
++ false.toString
++ true.toString
+- Automatic type conversion *** Note
+- Automatic String Conversion *** Note
+if myVar = {name:"Fjohn"}  // toString converts to "[object Object]"
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>JavaScript Type Conversion</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    
+    <script>
+        // unary + operator (conver var to num)
+        let x = '5';
+        let y = + x 
+        document.getElementById("demo").innerHTML = "typeof x -> " + typeof x;
+        document.getElementById("demo1").innerHTML = "typeof y -> " + typeof y;
+
+        let a = "Hanh";
+        let b = + a;
+        document.getElementById("demo2").innerHTML = "typeof a ->" + typeof a;
+        document.getElementById("demo3").innerHTML = "typeof b ->" + typeof b;
+        document.getElementById("demo4").innerHTML = "b = " + b;
+
+        // convert num to string
+        let n = 123;
+        document.getElementById("demo5").innerHTML =
+        'String(x) ' + String(x) + "<br>" +
+        'String(123) ' + String(123) + "<br>" +
+        'String(10 + 20) ' + String(10 + 20);
+
+        document.getElementById("demo6").innerHTML =
+        'n.toString() ' + n.toString() + "<br>" +
+        '(123).toString() ' + (123).toString() + "<br>" +
+        '(10 + 20).toString() ' + (10 + 20).toString();
+
+    </script>
+</body>
+</html>

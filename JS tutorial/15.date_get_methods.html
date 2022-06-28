@@ -1,0 +1,34 @@
+<!-- JavaScript Get Date Methods
+getFullYear() -> return (yyyy)
+getMonth() -> (0-11)
+getDate() -> (1-31)
+getHours() -> (0-23)
+getMinutes() -> (0-59)
+getSeconds() -> (0-59)
+getMilliseconds() -> (0-999)
+getTime() -> Get the time (milliseconds since January 1, 1970)
+getDay() -> (0-6) [the first day of the week (0) means "Sunday"]
+Date.now() -> 	Get the time
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>JavaScript Get Date Methods</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+
+    <script>
+        // Return the month as a name
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        const d = new Date();
+        let month = months[d.getMonth()];
+        document.getElementById("demo").innerHTML = month
+
+    </script>
+</body>
+</html>

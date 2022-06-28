@@ -1,0 +1,56 @@
+<!-- JavaScript Objects
+- Typeof = object
++ Boolean (defined with the new keyword)
++ Number (new)
++ String (new)
++ Date
++ Math
++ Regular expression
++ Array
++ Function
++ Object
+- JS primitives
++ A primitive value is a value that has no properties or methods.
++ A primitive data type is data that has a primitive value.
++ JavaScript defines 7 types of primitive data types:
+    # string
+    # number
+    # boolean
+    # null
+    # undefined
+    # symbol
+    # bigint
++ Primitive values are immutable
+Ex: x = 3.14, can change the value of x, cannot change the value of 3.14
+- Objects are variables
++ name : value pairs (separated by a colon)
+const person = {fname: "Hanh", lname: "Ngo"};
+- Objects properties (objects JS = dictionaries Python)
++ fname, lname are properties
+- Objects methods
++ Methods are actions that can be performed on objects (function)
+- Create an object
++ Single object -> object literal, new keyword 
++ Define an object constructor
++ Using Object.create()
+    # Object literal
+    const person1 = {fname: "Hanh", lname: "Ngo"};
+    const person2 = {};
+    person2.fname = "Hanh";
+    person2.lname = "Ngo";
+    # Using the keyword new
+    const person3 = new Object();
+    person3.fname = "Hanh";
+    person3.lname = "Ngo";
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p id = "demo"></p>
+    <script>
+        var x = new Boolean (false);
+        document.getElementById("demo").innerHTML = typeof x;
+    </script>
+</body>
+</html>

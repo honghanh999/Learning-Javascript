@@ -1,0 +1,60 @@
+<!--JavaScript Errors
+- Content
++ The try statement defines a code block to run (to try).
++ The catch statement defines a code block to handle any error.
++ The finally statement defines a code block to run regardless of the result.
++ The throw statement defines a custom error (throw an exception or error)
+- Error Name values
+RangeError: A number "out of range" has occurred
+ReferenceError: An illegal reference has occurred
+SyntaxError: A syntax error has occurred
+TypeError: A type error has occurred
+URIError: An error in encodeURI() has occurred ??? (Uniform Resource Identifier)
++ RangeError: using toPrecision to round a number
+num.toPrecision(200) -> the number will have 200 digits
++ ReferenceError:  is thrown if you use (reference) a variable that has not been declared
++ SyntaxError: missing ' will produce an error
++ TypeError: cannot convert a number to upper case
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>JavaScript Errors</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+
+    <script>
+        // JS catch adddlert as an error and using catch to handle this
+        try {
+        adddlert("Welcome"); // return adddlert is not defined
+        }
+        catch(err) {
+        document.getElementById("demo").innerHTML = err.message;
+        } 
+
+        // toPrecision()
+        let num = 500.5242566
+        try {
+            num.toPrecision(500);
+        }
+        catch(err) {
+            document.getElementById("demo1").innerHTML ='err.name -> ' + err.name;
+        }
+        document.getElementById("demo2").innerHTML = 'num.toPrecision(5) -> ' + num.toPrecision(5);
+        
+        // reference error
+        let x = 5;
+        try {
+            x = y + 1;
+        }
+        catch(err) {
+            document.getElementById("demo3").innerHTML = err.name;
+        }
+    </script>
+    
+</body>
+</html>

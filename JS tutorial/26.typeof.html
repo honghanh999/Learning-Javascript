@@ -1,0 +1,72 @@
+<!-- JavaScript typeof
+*** Return object: object, date, array, null
+-  5 different data types that can contain values
+string -> string
+number -> number
+boolean -> boolean
+object -> object
+function -> function
+- 6 types of objects
+Object
+Date -> object
+Array -> object
+String
+Number
+Boolean
+- 2 data types that cannot contain values
+null -> object
+undefined -> typeof x
+***
+typeof NaN -> number
+- The constructor property -> returns the constructor function for all variables
+"Hanh".constructor -> function String() { [native code] }
++ Find out an object is an array (contains the word "array")
+- Null
++ Empty an object by setting it to null or undefined
+let person = {fname: "Hanh", lname: "Ngo"};
+person = null -> return object
+person = undefined -> return undefined
+*** undefined and null equal value but different in type
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>JavaScript typeof</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        // constructor
+        document.getElementById("demo").innerHTML = 
+        '"Hanh".constructor -> ' + "Hanh".constructor + "<br>" + 
+        '(12).constructor -> ' + (12).constructor + "<br>" + 
+        'false.constructor -> ' + false.constructor + "<br>" +
+        '[1,2,3,4].constructor -> ' + [1,2,3,4].constructor + "<br>" +
+        '{fname: "Hanh", lname: "Ngo"}.constructor -> ' + {fname: "Hanh", lname: "Ngo"}.constructor + "<br>" +
+        'new Date().constructor -> ' + new Date().constructor + "<br>" +
+        'function() {}.constructor -> ' + function() {}.constructor + "<br>";
+
+        // check if an object is an array
+        const fruits = new Array ("orange", "lemon");
+        function isArray(myArray) {
+            return myArray.constructor.toString().indexOf("Array") > -1 // ???
+        }
+        document.getElementById("demo1").innerHTML = 'return myArray.constructor.toString().indexOf("Array") > -1 -> ' + isArray(fruits); 
+
+        function myfunct(myArray2) {
+            return myArray2.constructor === Array;
+        }
+        document.getElementById("demo2").innerHTML = 'return myArray2.constructor === Array -> ' + myfunct(fruits)
+        
+        // check if an object is a Date (the same as array nha)
+
+
+    </script>
+</body>
+</html>

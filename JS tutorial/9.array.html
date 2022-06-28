@@ -1,0 +1,166 @@
+<!-- JavaScript Arrays
+- Create a array: 4 ways (see example below)
+
+- Accessing the Last Array element 
+let fruit = fruits[0]
+let fruit = fruits[fruits.lenth -1];
+
+- Looping array elements
+const fruits = ["banana", "orange", "apple"]
+let flen = fruits.length;
+
+- Arrays are objects
+const person = {firstName: "Hanh", lastName:"Ngo"}
+-> person.firstName to return "Hanh"
+
+- Array elements can be objects
++ Can have objects in an array
++ Can have functions in an Array
++ Can have arrays in an arrays
+myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars;
+
+- Array properties and methods
+cars.length
+cars.sort()
+
+- Looping array elements
++ for loop
++ forEach() function
+    # The forEach() method calls a function for each element in an array
+    # It is not executed for empty element
+    # Syntax:
+    array.forEach(function(currentValue, index, arr), thisValue)
+    *** thisValue: default undefined
+
+- Adding array elements
++ Using push()
++ Using length
++ Using index (Adding elements with high indexes can create undefined in an array )
+
+- Associative Arrays - Hashes (Arrays with named indexes)
++ JS doesn't support arrays with named indexes
++ Arrays always use numbered indexes in JS
+const person = [];
+person[0] = "Hanh";
+person[1] = "Hong";
+person.length;  // return 2
+person[0]; // return "Hanh"
+
+const person = [];
+person["firstName"] = "Hanh";
+person["lastName"] = "Hong";
+person.length; // return 0
+person[0]; // return undefined
+
+- The difference between arrays and objects
++ Arrays use numbered indexes []
++ Objects use named indexes {}
+(Arrays are a special kind of objects, with numbered indexes)
+
+- How to recognize an Array
+const fruits = ["Banana", "Orange", "Apple"];
++ Array.isArray(fruits)
++ fruits instanceof Array;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Array</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+
+    <script>
+        
+        const name = ["Ngo", "Thi", "Hong", "Hanh"];
+        // print array
+        document.getElementById("demo").innerHTML = name
+
+        const name1 = [
+            "Ngo2",
+            "Hanh2"
+        ]
+        document.getElementById("demo1").innerHTML = name1
+
+        const name2 = []
+        name2[0] = "Ngo3";
+        name2[1] = "Hanh3";
+        // print array
+        document.getElementById("demo2").innerHTML = name2
+
+        const name3 = new Array("Ngo4", "Thi4", "Hong4", "Hanh4");
+        document.getElementById("demo3").innerHTML = name3
+
+        const hello = new Array(2); // when add 1 element (number) -> return ,
+        document.getElementById("demo10").innerHTML = hello 
+        document.getElementById("demo11").innerHTML = hello[0] // return undefined
+
+        const hello2 = [2];
+        document.getElementById("demo12").innerHTML = hello2 // return 2
+
+        // for loop
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fLen = fruits.length;
+
+        let text = "<ul>";
+        for (let i = 0; i < fLen; i++) {
+        text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo4").innerHTML = text;
+
+        // forEach
+        let sum = 0;
+        const numbers = [65, 35, 23, 4];
+        numbers.forEach(myFunction);
+        
+
+        document.getElementById("demo5").innerHTML = "forEach" + sum;
+        
+        // const phones = ["nokia", "iphone", "samsung"];
+        // phones [5] = "xiaomi"; // Cannot appear many undefined and xiaomi if setting index >= length
+        
+        // let flen2 = phones.length;
+        // let text2 = "";
+        // for (i = 0; i < fLen; i++) {
+        //     text2 += phones[i] + "<br>";
+        // }
+        // document.getElementById("demo7").innerHTML = text2
+
+        // push 
+        const flowers = ["rose", "tulip"];
+        flowers.push("daisy");
+        document.getElementById("demo8").innerHTML = flowers;
+        
+        const person = [];
+        person["firstName"] = "Hanh";
+        person["lastName"] = "Hong";
+        document.getElementById("demo9").innerHTML = person[0] + " " + person.length;
+
+        // Recognize an array
+        var books = ["book a", "book b"];
+
+        document.getElementById("demo15").innerHTML = typeof books;
+
+        document.getElementById("demo13").innerHTML = books instanceof Array;
+
+        document.getElementById("demo14").innerHTML = Array.isArray(books)
+    </script>
+</body>
+</html>

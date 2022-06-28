@@ -1,0 +1,42 @@
+<!-- Prototypes
+- Content
++ Can not add a new property to an existing object constructor
+-> using prototype to add new properties to object constructors
+- Inheritance
++ Date.prototype
++ Array.prototype
++ Person.prototype 
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Prototypes</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eye = eye;
+        }
+        Person.prototype.city = "Danang";
+        const person1 = new Person("First", "Second", 15, "blue");
+        document.getElementById("demo").innerHTML = 'Person.prototype.city = "Danang" -> ' + person1.city;
+        Person.prototype.email = function() {
+            return this.firstName.toLowerCase() + "@gmail.com";
+        }
+        document.getElementById("demo1").innerHTML = 'person1.email() -> ' + person1.email();
+
+    </script>
+</body>
+</html>

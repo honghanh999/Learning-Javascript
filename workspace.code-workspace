@@ -1,0 +1,49 @@
+{
+	"folders": [
+		{
+			"path": "..\\Python\\OOP"
+		},
+		{
+			"path": "..\\Python\\Pong Game"
+		},
+		{
+			"path": "..\\Python\\Data Structures"
+		},
+		{
+			"path": "..\\Python\\Algorithms"
+		},
+		{
+			"path": "..\\Python\\Pong Practice 2"
+		},
+		{
+			"path": "..\\Python\\Blog_web"
+		},
+		{
+			"path": "..\\Python\\Market_FCC"
+		},
+		{
+			"path": "..\\Python\\Todolist"
+		},
+		{
+			"path": "..\\Python\\Learning"
+		},
+		{
+			"path": "..\\Python\\OOP New"
+		},
+		{
+			"path": "..\\SQL\\MySQL DB"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\Report"
+		},
+		{
+			"path": "..\\Node JS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JavaScript"
+	}
+}

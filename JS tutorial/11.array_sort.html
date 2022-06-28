@@ -1,0 +1,139 @@
+<!-- JavaScript Sorting Arrays
+- Numeric sort
++ The sort() function sorts values as strings 
+-> sort number will produce incorrect result
+-> using compare function to fix this
+- Compare function
++ To define an alternative sort order
+points.sort(function(a, b){return a - b});
+points.sort(function(a, b){return b - a});
+- Sorting an array in random order
+points.sort(function(a,b){return 0.5 - Math.random()})
+- The fisher yates method ???
+- Min max: 
++ Using sort function
++ Using Math.min.apply(null, arr), Math.min() to find the lowest number in an array
++ Using Math.max.apply(null, arr), Math.max()
++ JS methods -> using function loops
+- Comparing string properties is a little more complex???
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Array Sort</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+    <p id = "demo17"></p>
+    <p id = "demo18"></p>
+
+    <button onclick="myFunction()">Click</button>
+    <script>
+        // sort and reverse
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits
+        fruits.sort()
+        document.getElementById("demo1").innerHTML = "Sort: " + fruits
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        fruits2.reverse()
+        document.getElementById("demo2").innerHTML = "Reverse: " + fruits2
+        document.getElementById("demo3").innerHTML = typeof fruits2
+        
+        // numeric sort (sort function)
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo4").innerHTML = points;
+        
+        points.sort(function(a, b){return a - b});
+        document.getElementById("demo5").innerHTML = "function(a, b){return a - b} " + points;
+        points.sort(function(a, b){return b - a});
+        document.getElementById("demo6").innerHTML = "function(a, b){return b - a} " + points;
+
+        // sorting in random order
+        const points1 = [40, 100, 1, 5, 25, 10];
+        function myFunction() {
+            points1.sort(function(a, b) {return 0.5 - Math.random()});
+            document.getElementById("demo7").innerHTML = "function(a, b) {return 1 - Math.random()}  " + points1;
+        }
+
+        // The fisher yates method
+        
+        // Find the highest or lowest array value
+        const points2 = [40, 100, 1, 5, 25, 10];
+        points2.sort(function(a, b){return a - b});
+        document.getElementById("demo8").innerHTML = "min " + points2[0]
+        points.sort(function(a, b){return b - a});
+        document.getElementById("demo9").innerHTML = "max " + points2[points.length-1]
+        
+        // Math.min.apply
+        const points3 = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo10").innerHTML = "function myArrayMin(arr) -> " + myArrayMin(points)
+        function myArrayMin(arr) {
+            return Math.min.apply(null, arr);
+        }
+
+        const test =  Math.min.apply(null, [9, 3, 5])
+        document.getElementById("demo11").innerHTML = "Math.min.apply(null, [9, 3, 5]) -> " + test
+        document.getElementById("demo12").innerHTML = "Math.min(1,2,3) -> " + Math.min(1,2,3)
+
+        // Using loop -> max and min number
+        const num = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo12").innerHTML = "Normal array  " + num
+        function myArrayMin(arr) {
+            let len = arr.length;
+            let min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                    min = arr[len];
+
+                }
+            }
+            return min;
+        }
+        document.getElementById("demo13").innerHTML = "myArrayMin " + myArrayMin(num);
+
+        function myArrayMax(arr) {
+            let len = arr.length;
+            let max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                    max = arr[len];
+                }
+            }
+            return max;
+        };
+        document.getElementById("demo14").innerHTML = "myArrayMax " + myArrayMax(num)
+
+        // Sorting object arrays    (Array contain object)
+        const cars = [
+            {type:"BCC", year:2019},
+            {type:"ACC", year:2011},
+            {type:"CCC", year:2015}
+        ];
+    
+        cars.sort(function(a, b){return a.year - b.year});
+        function displayCars() {
+            document.getElementById("demo15").innerHTML = 
+            "cars.sort(function(a, b){return a.year - b.year}) " + "<br>" +
+            cars[0].type + " " + cars[0].year + "<br>" +
+            cars[1].type + " " + cars[1].year + "<br>" +
+            cars[2].type + " " + cars[2].year;
+        }
+        displayCars()
+
+    </script>
+</body>
+</html>

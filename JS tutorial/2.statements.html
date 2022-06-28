@@ -1,0 +1,60 @@
+<!-- JavaScript Statements
+- Content
++ JS statements are composed of: value, operators, expressions, keywords, comments
++ Semicolons ";" separate JS statements
+    # Ending statements with semicolon is not required, but highly recommended.
++ JavaScript line length and line breaks: For best readability, avoid code lines
+longer than 80 characters
+    # If the statement doesn't fit on one line, break it after an operator
+    Ex:
+    document.getElementById("demo").innerHTML 
+    =
+    "Hello nha!";
++ JavaScript code blocks
+    # Can be grouped together in code blocks, inside curly brackets {...}
+    # Purpose: define statements to be exected together
++ JS keywords
+    # var: declares a variable
+    # let: declares a block variable
+    # const: declares a block constant 
+    # if
+    # switch
+    # for 
+    # function
+    # return
+    # try
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h1>Statements</h1>
+    <p id = "demo"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <button type = "button"
+    onclick = "myFunction()">Test Function</button>
+
+    <script>
+        document.getElementById("demo").innerHTML
+        =
+        "Test line break";
+        let a, b, c;
+        a = 5;
+        b = 7;
+        c = a + b;
+        // a = 5; b = 5; c = a + b; (It's ok for multiple statements on one line)
+        document.getElementById("demo2").innerHTML = "Test variable " + c;
+
+        function myFunction() {
+            document.getElementById("demo3").innerHTML = "Test function 1";
+            document.getElementById("demo4").innerHTML = "Hellooooo"
+        }
+    </script>
+</body>
+</html>

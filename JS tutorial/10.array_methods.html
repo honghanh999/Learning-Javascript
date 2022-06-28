@@ -1,0 +1,120 @@
+<!-- JavaScript Array Methods
+- Converting arrays to strings: 2 ways
++ toString()
++ join() -> need to specify the separator
+- Popping | pushing | shifting
++ pop the last element
++ shift the first element (it can return the value that was shifted out)
+- Unshift()
++ Adding a new element to an array (at the beginning), and unshifts older elements
+- Changing elements
+- Merging (concatenating) arrays
+- Splicing and slicing arrays
++ splice() method adds new items to an array
+Ex: fruits.splice(2,0, "lemon", "kiwi")
+    # The first parameter(2) defines the position
+    # The second (0) defines how many elements should be removed
+    # The rest of the parameters define the new elements to be added
++ slice() method slices out a piece of an array into a new array
+    # Create a new array
+    # Dosen't remove any elements from the source array
+    # The method then selects elements from the strart argument, 
+and up to (but not including) the end argument.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Array Methods</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+    <p id = "demo17"></p>
+    <p id = "demo18"></p>
+
+    <script>
+
+        // coverting arrays to strings
+        const books = ["book1", "book2", "book3"];
+        document.getElementById("demo").innerHTML = typeof books;
+        books2 = books.toString();
+        document.getElementById("demo1").innerHTML = typeof books2;
+        
+        const notebook = "notebook here";
+        document.getElementById("demo2").innerHTML = typeof notebook;
+
+        const flowers = ["rose", "daisy"];
+        flowers2 = flowers.join("_");
+        document.getElementById("demo3").innerHTML = typeof flowers2;
+        document.getElementById("demo4").innerHTML = flowers2
+
+        // push 
+        flowers.push("flower3")
+        document.getElementById("demo5").innerHTML = flowers
+        let length = flowers.push("flowers4")
+        document.getElementById("demo6").innerHTML = flowers
+
+        // pop the same
+
+        // shift
+        const phones = ["iphone", "nokia", "samsung"]
+        phones.shift();
+        document.getElementById("demo7").innerHTML = phones
+        document.getElementById("demo8").innerHTML = phones.shift()
+
+        // unshift()
+        phones.unshift("test unshift");
+        document.getElementById("demo9").innerHTML = phones;
+
+        // changing elements
+        const phones2 = ["iphone", "nokia", "samsung"];
+        phones2[0] = "test changing";
+        document.getElementById("demo10").innerHTML = phones2;
+
+        //Merging arrays
+        const phones4 = ["iphone", "nokia"];
+        const flowers4 = ["rose", "daisy"];
+        const fruits4 = ["orange", "lemon"];
+
+        const merging = phones4.concat(flowers4, fruits4);
+        document.getElementById("demo11").innerHTML = merging;
+
+        // Merging an array with values
+        const myChildren = phones4.concat("xiaomi", "abc")
+        document.getElementById("demo12").innerHTML = myChildren
+
+        // splice and slice
+        const phones5 = ["iphone", "nokia", "samsung", "oppo"];
+        document.getElementById("demo13").innerHTML = phones5
+        phones5.splice(2, 2, "phone add 1", "phone add 2") // position, remove
+        document.getElementById("demo14").innerHTML = phones5
+        const phones6 = ["iphone", "nokia", "samsung", "oppo"];
+        phones6.splice(0,2)
+        document.getElementById("demo15").innerHTML  = phones6
+        
+        const phones7 = ["iphone1", "nokia1", "samsung1", "oppo1"];
+        const cut = phones7.slice(1,3); // up to but not including
+        document.getElementById("demo16").innerHTML = phones7 + "<br><br>" + cut
+        
+        const phones8 = ["iphone2", "nokia2", "samsung2", "oppo2"];
+        const cut2 = phones8.slice(2); // from this position to the end
+        document.getElementById("demo17").innerHTML = phones8 + "<br><br>" + cut2;
+
+    </script>
+</body>
+</html>

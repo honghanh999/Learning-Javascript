@@ -1,0 +1,56 @@
+<!-- Constructors
+- Buit-in JS constructors
+new String()
+new Number()
+new Boolean()
+new Object()
+new Array()
+new RegExp()
+new Function()
+new Date()
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Constructors</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        function Person (first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.email = function () {
+                return this.firstName.toLowerCase() + "@gmail.com";
+            }
+        }
+        const person1 =  new Person ("Hoa", "Hong", 15, "blue");
+        const person2 = new Person ("Cay", "La", 22, "black");
+        document.getElementById("demo").innerHTML = 'person1.firstName + person1.lastName -> ' + person1.firstName + person1.lastName;
+        document.getElementById("demo1").innerHTML = 'person2.firstName + person2.lastName -> ' + person2.firstName + person2.lastName;
+
+        // adding a property to an object
+        person1.lang = "English"
+        document.getElementById("demo2").innerHTML = 'person1.lang -> ' + person1.lang
+
+        // adding a method to an object
+        person1.fullName = function () {
+            return this.firstName + " " + this.lastName;
+        }
+        document.getElementById("demo3").innerHTML ="person1.fullName = function () -> " + person1.fullName();
+   
+        // adding a method to a constructor (add in function)
+        document.getElementById("demo4").innerHTML = "person1.email() -> " + person1.email();
+  
+   </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!-- This
+- Content
++ Refers to an object
++ Alone, refers to the global object
++ Function, refers to the global object
++ In a function, in strict mode, this is undefined
++ In an event, this refers to the element that received the event
++ Methods like call(), apply(), and bind() can refer this to any object.
+apply -> array
+call -> argument
+    # Syntax
+function.call(thisArg, arg1, arg2, ...)
+fun.apply(thisArg, [argsArray])
+var newFunction = fun.bind(thisArg[, arg1[, arg2[, ...]]])
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>This</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+
+
+    <script>
+        // this in a method
+        const person = {
+            fname: "Hanh",
+            lname: "Ngo",
+            city: "DN",
+            fullName : function() {
+                return this.fname + " " + this.lname;
+            }
+        }
+        document.getElementById("demo").innerHTML = 'return this.fname + " " + this.lname -> ' + person.fullName();
+        
+        // this alone: refer to the global object
+        let x = this;
+        document.getElementById("demo1").innerHTML = x;
+        // apply() method
+        var human1 = {fname:"Hoa", lname:"La"};
+        var human2 = {fname:"Cay", lname: "Canh"};
+        function callFunct(greeting1, greeting2) {
+            return greeting1 + " " + greeting2 + " " + this.fname + " " + this.lname;
+        }
+        document.getElementById("demo2").innerHTML = 'callFunct.apply(human1, ["Hello", "Nha"]) -> ' + callFunct.apply(human1, ["Hello", "Nha"]);
+        document.getElementById("demo3").innerHTML = 'callFunct.apply(human2, ["Hello", "Nha"]) -> ' + callFunct.apply(human2, ["Hello", "Nha"]);
+
+        // call() method
+        var human3 = {fname:"Hoa", lname:"La"};
+        var human4 = {fname:"Cay", lname: "Canh"};
+        function callFunct2(greeting1, greeting2) {
+            return greeting1 + " " + greeting2 + " " + this.fname + " " + this.lname;
+        }
+        document.getElementById("demo4").innerHTML = 'callFunct2.call(human1, "Hello", "Array") -> ' + callFunct2.call(human3, "Hello", "Array");
+        document.getElementById("demo5").innerHTML = 'callFunct2.call(human2, "Hello", "Array") -> ' + callFunct2.call(human4, "Hello", "Array");
+
+        // function borrowing -> bind()
+        const person4 = {
+            fname: "Hanh",
+            lname: "Ngo",
+            city: "DN",
+            fullName : function() {
+                return this.fname + " " + this.lname;
+            }
+        }
+        const member = {
+            fname: "Hello",
+            lname: "nha"
+        }
+        let newFunct = person4.fullName.bind(member); // create a new function
+        document.getElementById("demo6").innerHTML = 'let newFunct = person4.fullName.bind(member) -> ' + newFunct();
+
+    </script>
+
+    <!-- this in event handlers -->
+    <button onclick="this.style.display='none'">Click to remove</button>
+
+</body>
+</html>

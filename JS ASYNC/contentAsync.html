@@ -1,0 +1,205 @@
+<!--
+- setTimeout() web api  -> Asynchronous
+- How to handle Asychronous?
++ callback
++ promise
++ async await
+- Asychronous
++ Browser API/ Web API
+    # setTimeout(), setInterval(),...
+    # click, scroll,... events
++ Promises is an object in order to do asnchronous opearation
+    # new Promise(executor)
+        state: "pending"
+        result: undefined
+    # resolve(value): this is a function -> .then will be used
+        state: "fulfilled"
+        result: value
+    # reject(error): this is a function -> .catch will be used
+        state: "rejected"
+        result: error
++ Async await
+
+        
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        // setTimeout()
+        // function test() {
+        //     setTimeout(() => console.log('1'), 2000)
+        //     console.log('2')
+        //     console.log('3')
+        // }
+        // test()
+
+        // callback()
+        // function test2(item, callback) {
+        //     console.log('11')
+        //     callback()
+        // }
+        // test2("item", function() {
+        //     console.log("12");
+        // })
+
+        // callback hell
+        // function doHomework(subject, callback) {
+        //     setTimeout(() => {
+        //         callback()
+        //     }, 2000);
+        // }
+        // doHomework("a", function(){
+        //     console.log("a");
+        //     doHomework("b", function(){
+        //         console.log("b");
+        //         doHomework("c", function(){
+        //             console.log("c");
+        //             doHomework("d", function(){
+        //                 console.log("d");
+        //                 doHomework("e", function(){
+        //                     console.log("e");
+        //                 })
+        //             })
+        //         })
+        //     })
+        // })
+
+        // promise
+        // const currentPromise = new Promise(function(resolve, reject) {
+        //     let condition = false;
+        //     if (condition) {
+        //         setTimeout(function() {
+        //         resolve('success')
+        //         }, 3000)
+        //     } else {
+        //         reject('error')
+        //     }
+        // })
+        // currentPromise.then(function(data) {
+        //     console.log(data);
+        // }).catch(function(data){
+        //     console.log(data);
+        // })
+
+        // promise 2
+        // const myPromise = new Promise((myResolve, myReject) => {
+        //     setTimeout(() => {
+        //         myResolve('success roiii')
+        //     })
+        // })
+        // const myPromise2 = new Promise((myResolve, myReject) => {
+        //     myReject('error roiiii')
+        // })
+        // myPromise.then((data) => {
+        //     console.log(data);
+        // })
+        // myPromise2.catch((data) => {
+        //     console.log(data);
+        // })
+
+        // promise 3
+        // function readBook(type, callback2) {
+        //     console.log(type);
+        //     callback2("x")
+        // }
+        // const myPromiseMain = new Promise((myResolve, myReject) => {
+        //     readBook("b1", myResolve)
+    
+        // })
+
+        // const myPromise3 = new Promise((myResolve, myReject) => {
+        //     readBook("b2", myResolve)
+           
+        // })
+
+        // const myPromise4 = new Promise((myResolve, myReject) => {
+        //     readBook("b3", myReject)
+           
+        // })
+        // myPromiseMain
+        //     .then((data) => {
+        //         return myPromise3
+        //     })
+        //     .then((data) => {
+        //         return myPromise4
+        //     })
+
+        //     // using this to complete
+        //     .then((data) => {
+        //         console.log(data);
+        //     })
+            
+        //     // catch all
+        //     .catch((err) => {
+        //         console.log("err");
+        //     })
+        
+       
+        
+
+        // promise 4
+        let myPromise = new Promise(function(myResolve, myReject) {
+            setTimeout(function() { 
+                console.log("HELLO");
+                myResolve({
+                    name: 'aa'
+                }); 
+            }, 3000);
+        });
+
+        let myPromise2 = (exVar) => {
+            return new Promise(function(myResolve, myReject) {
+                console.log({ exVar });
+                console.log("A");
+                myResolve("A"); 
+            });
+        }
+
+        let myPromise3 = (exVar3) => {
+            return new Promise(function(myResolve, myReject) {
+                console.log({ exVar3 });
+                console.log("B");
+                myReject("B"); 
+            });
+        }
+
+        myPromise
+        .then((data) => myPromise2(data))
+        .then((data) => myPromise3(data))
+        .then((data) => {
+            console.log({ data });
+        })
+        .catch((data) => {})
+
+        // async await
+        // const myPromiseMain5 = () => new Promise((myResolve, myReject) => {
+        //     setTimeout(function() {
+        //         console.log("a");
+        //         myResolve ("success!!!")
+        //     }, 2000) 
+        // })
+        // const myPromise5 = () => new Promise((myResolve, myReject) => {
+        //     console.log("b");
+        //     myResolve("myResolve")
+        // })
+        // const myPromise6 = () => new Promise((myResolve, myReject) => {
+        //     console.log("c");
+        //     myResolve("myResolve")
+        // })
+        // const myFunct = () => {
+        //     console.log("myfunct");
+        // }
+        // const executeAsync = async () => {
+        //     await myPromiseMain5();
+        //     await myPromise5();
+        //     myFunct()
+        //     await myPromise6();
+        // }
+        // executeAsync()
+
+    </script>
+</body>
+</html>

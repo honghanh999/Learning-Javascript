@@ -1,0 +1,114 @@
+<!-- Properties
+- Content
++ Properties are the values associated with a JS object
+- Syntax
++ person.age
++ person["age"]
++ x = "age"; person[x]
+- For in loop
++ For...in statement loops through the properties of an object
+
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Properties</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        const person = {
+            fname: "Hanh",
+            lname: "Ngo"
+        }
+        let txt = "";
+        for (let x in person) {
+            txt += person[x] + " ";
+        }
+        document.getElementById("demo").innerHTML ="txt += person[x] -> " + txt;
+        
+        // add
+        person.year = 1999;
+        let txt2 = "";
+        for (let x in person) {
+            txt2 += person[x] + " ";
+        }
+        document.getElementById("demo1").innerHTML = "person.year = 1999 -> " + txt2;
+
+        // delete
+        delete person["year"] // delete person.year
+        let txt3 = "";
+        for (let x in person) {
+            txt3 += person[x] + " ";
+        }
+        document.getElementById("demo2").innerHTML = 'delete person["year"]-> ' + txt3;
+
+        // Nested objects
+        myObj = {
+            fruits: "orange",
+            price: 100,
+            type: {
+                type1: "VN",
+                type2: "CN",
+                type3: "US",
+                type4: "FR"
+            }
+        }
+        document.getElementById("demo3").innerHTML ="myObj.type.type1 -> " + myObj.type.type1;
+        document.getElementById("demo4").innerHTML ='myObj.type["type2"] -> ' + myObj.type["type2"];
+        document.getElementById("demo5").innerHTML ='myObj["type"]["type3"] -> ' + myObj["type"]["type3"];
+
+        let x1 = "type";
+        let x2 = "type4";
+        document.getElementById("demo5").innerHTML ='myObj[x1][x2] -> ' + myObj[x1][x2];
+
+        // Nested Array and objects
+        const obj = {
+            name : "orange",
+            type: [
+                {name:"orange1", price:[100, 200, 300]},
+                {name:"orange2", price:[200, 400, 700]},
+                {name:"orange3", price:[800, 600, 900]}
+            ]
+        }
+        let a = "";
+        for (let i in obj.type) {
+            a += "<h2>" + obj.type[i].name + "</h2>";
+            for (let j in obj.type[i].price) {
+                a += obj.type[i].price[j] + "<br>";
+            }
+        }
+        document.getElementById("demo6").innerHTML = "<br>" + "Nested Array and objects ->" + a;
+
+
+        const obj2 = {
+        name: "John",
+        age: 30,
+        cars: [
+            {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+            {name:"BMW", models:["320", "X3", "X5"]},
+            {name:"Fiat", models:["500", "Panda"]}
+            ]
+        }
+        let z = "";
+        for (let m in obj2.cars) {
+            z += "<h2>" + obj2.cars[m].name + "</h2>";
+            for (let n in obj2.cars[m].models) {
+                z += obj2.cars[m].models[n];
+            }
+        }
+        document.getElementById("demo7").innerHTML = z;
+
+    </script>
+</body>
+</html>

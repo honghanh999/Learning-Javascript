@@ -1,0 +1,27 @@
+<!-- Scope
+- 3 types: block, fuction, global scope
+- Global variables (or functions) can overwrite window variables (or functions).
+Any function, including the window object, can overwrite the global variables and functions.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>JavaScript Scope</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+
+    <script>
+        // use window.carName 
+        let fruit = "orange"; // cannot use window.fruit
+        var carName = "bcc";
+        document.getElementById("demo").innerHTML = 'var carName = "bcc" || window.carName -> '+ window.carName;
+        document.getElementById("demo1").innerHTML = 'let fruit = "orange" || window.fruit -> ' + window.fruit;
+
+    </script>
+</body>
+</html>

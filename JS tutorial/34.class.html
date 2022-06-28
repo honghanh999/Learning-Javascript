@@ -1,0 +1,40 @@
+<!-- Class
+- Content
++ Always add a method named constructor()
++ A JS class is not an object
++ It is a template for JS objects
+- Constructor method
++ It has to have the exact name "constructor"
++ It is executed automatically when a new object is created
++ It is used to initialize object properties
+- Syntax
+class ClassName {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Class</h1>
+    <p id = "demo"></p>
+    <script>
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            age (x) {
+                return x - this.year;
+            }
+        }
+        let date = new Date();
+        let year = date.getFullYear()
+
+        let myCar = new Car ("Abc", 2019);
+        document.getElementById("demo").innerHTML = "The name is " + myCar.name + ". It's " + myCar.age(year) + " years old."
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!-- Sets
+- New Methods
++ entries(): return an iterator with the [value, value] pairs from a Set
++ keys(): create an array with all of the key of object
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Sets</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+
+    <script>
+        // create a new set ( using value to access set)
+        const letters = new Set(["a", "b", "c"]);
+        text = "";
+        for (const i of letters.values()) {
+            text += i + "<br>";
+        }
+        document.getElementById("demo8").innerHTML = letters instanceof Set;
+        document.getElementById('demo').innerHTML ='const letters = new Set(["a", "b", "c"]) -> ' + text;
+
+        // add values to the set
+        letters.add("d");
+        letters.add("e");
+        text2 = "";
+        for (const z of letters.values()) {
+            text2 += z + "<br>";
+        }
+        document.getElementById("demo1").innerHTML = "add d, e -> " + "<br>" + text2;
+    
+        // add variables to the set
+        const f = "f";
+        const g = "g";
+        const h = "h";
+        letters.add(f);
+        letters.add(g);
+        letters.add(h);
+        text3 = "";
+        for (const y of letters.values()) {
+            text3 += y + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = " add variables" + "<br>" + text3;
+    
+        // forEach() method
+        let text4 = "";
+        letters.forEach (function(value, index) {
+            text4 += value + ":" + index + "<br>";
+        })
+        document.getElementById("demo3").innerHTML ='letters.forEach (function(value, index) -> ' + "<br>" + text4;
+
+        // keys the same as value
+        const books = new Set (['book1', ' book2', 'book3'])
+        text5 = "";
+        const keys = books.keys();
+        document.getElementById("demo4").innerHTML = keys;
+        for (const m of keys) {
+            text5 += m;
+        }
+        document.getElementById("demo4").innerHTML = 'const keys = books.keys() -> ' + text5;
+        document.getElementById("demo5").innerHTML = 'typeof books -> ' + typeof books;
+
+        // entries() method -> return [value, value] pairs(a set has no keys)
+        const books2 = new Set (["book1", "book2", "book3"])
+        const myIterator = books2.entries();
+        let text6 = "";
+        for (const k of myIterator) {
+            text6 += k + "<br>";
+        }
+        document.getElementById("demo6").innerHTML = 'const myIterator = books2.entries()'+ "<br>" + text6;
+
+        // Set are objects
+        test = books2 instanceof Set;
+        document.getElementById("demo7").innerHTML = 'books2 instanceof Set -> ' + test;
+
+
+
+    </script>
+</body>
+</html>

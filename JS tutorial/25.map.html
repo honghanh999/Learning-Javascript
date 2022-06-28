@@ -1,0 +1,92 @@
+<!-- Maps
+- Content
++ A Map holds key-value pairs where the keys can be any datatype
++ A Map remembers the original insertion order of the keys
+- Map methods
+new Map()
+set() -> Sets the value for a key in a Map
+get() -> Gets key return value
+delete() -> specified by the key
+has() -> Returns true if a key exists in a Map
+forEach() -> Calls a function for each key/value pair in a Map
+entries() -> Returns an iterator with the [key, value] pairs in a Map
+- Property
+size 
+- Create a map by 2 ways
++ Passing an Array to new Map()
++ Create a Map and use Map.set()
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Maps</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        //get
+        const fruits = new Map ([
+            ["apples", 500],
+            ["bananas", 200],
+            ["orange", 100]
+        ]);
+        document.getElementById("demo").innerHTML = "fruits.get(\"apples\") " + fruits.get("apples");
+    
+        //set
+        const fruits1 = new Map()
+        fruits1.set("apples", 200);
+        fruits1.set("bananas", 400);
+        fruits1.set("orange", 700);
+        document.getElementById("demo1").innerHTML = "fruits1.get(\"apples\")" + fruits1.get("apples")   
+        document.getElementById("demo2").innerHTML = "fruits1.size " + fruits1.size;
+        fruits1.delete("bananas");
+        document.getElementById("demo3").innerHTML = "fruits1.delete(\"bananas\") " + fruits1.size;
+
+        // forEach()
+        const books = new Map ([
+            ["book1", 200],
+            ["book2", 500],
+            ["book3", 800],
+            ["book4", 100],
+        ]);
+        let text = "";
+        function myfunct (value, key) {
+            text += key  + "=" + value + "<br>";
+        };
+        books.forEach(myfunct);
+        document.getElementById("demo4").innerHTML = "function myfunct (value, key) " + "<br>" + text + "<br>";
+
+        // has
+        document.getElementById("demo5").innerHTML = 'books.has("book1") ' +  books.has("book1")
+
+        // delete
+        books.delete("book1")
+        document.getElementById("demo6").innerHTML = " books.size " + books.size;
+
+        // entries -> return key, value
+        const books1 = new Map ([
+            ["book1", 200],
+            ["book2", 500],
+            ["book3", 800],
+            ["book4", 100],
+        ]);
+        let text1 = "";
+        for (const m of books1.entries()) {
+            text1 += m + "<br>";
+        }
+        document.getElementById("demo7").innerHTML ="for (const m of books1.entries())" + "<br>" + text1;
+
+
+    </script>
+
+        
+
+</body>
+</html>

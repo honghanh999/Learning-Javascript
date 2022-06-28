@@ -1,0 +1,75 @@
+<!-- Accessors
+- Getter and Setter
+- Object.defineProperty()
++ Date properties 
+-> default = true
+[[Configurable]]: check if this property can be redefined or deleted by "delete" 
+[[Enumerable]]: 
+[[Writable]]
+-> default = undefined
+[[Value]]
+
++ To change any properties, using object.defineProperty()
+    # This method accept 3 argument: (an object, propety of object, an object describe property)
+    
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Accessors</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        // Getter (get keyword)
+        const person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "en",
+        get fname() {
+            return this.firstName;
+            }
+        };
+        document.getElementById("demo").innerHTML = "get fname() -> " + person.fname;
+    
+        // Setter (set keyword)
+        const person1 = {
+        firstName: "",
+        lastName: "Doe",
+        language: "en",
+        // ??? fname 2 times
+        set fname(fname) { 
+            this.firstName = fname;
+            }
+        };
+        person1.fname = "John setter"
+        document.getElementById("demo1").innerHTML = 'person1.fname = "John setter" -> ' + person1.firstName;
+    
+        // Getter or function
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+            // get fullName() {
+            //     return this.firstName + " " + this.lastName;
+            // } -> person.fullName
+        }
+        document.getElementById("demo2").innerHTML = "fullName: function() -> " + person2.fullName();
+
+        // Object.defineProperty(): can be used to add Getters and Setters
+        
+
+
+    
+    </script>
+</body>
+</html>

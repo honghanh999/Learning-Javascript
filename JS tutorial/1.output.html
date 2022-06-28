@@ -1,0 +1,49 @@
+<!-- JavaScript Output
+- Content:
++ Writing into an html element, using innerHTML.
++ Writing into the HTML output using document.write().
++ Writing into an alert box, using window.alert().
++ Writing into the browser console , using console.log().
+- Example:
++ To access an HTML element, using document.getElementById(id) method
+    # The id attribute defines the HTML element.
+    # The innerHTML property defines the HTML content
+How to run html file from terminal ??? 
++ Using document.write(): using for testing purpose
+    # This is used to display a given text in a web page.
+    # This is mainly used for testing purpose.
++ Using window.alert() to write an alert box
+    # Can skip the windown keyword
++ Using console.log() method ???
+    # It has nothing to do with jQuery (framework of JS)
+    # It is a common object/method provided by debugger (including the Chrome debugger and Firebug)
+that allows a script to log data(or object in most case) to the JS console
+    # It use to debug JS code 
+    # It will display the contents of the variable, even if it is a array or object
++ Call the window.print() method in the browser to print the content of the current window
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Hello world!</h1>
+    <p>Hello nha</p>
+
+    <p id = "demo"></p>
+    <h1 id = "demo2"></h1>
+
+    <button type = "button" onclick="document.write(5+6)">Try it</button>
+    <script>
+        document.getElementById("demo").innerHTML = 5 + 6;
+        document.getElementById("demo2").innerHTML = "It's ok for both single and double quotes";
+        document.write(5 + 7)
+    // How to add alert for both text and sum of numbers ???
+        window.alert("Alert test " + 1 + 2);
+    </script>
+    <button type = "button" onclick="document.write('Text need to single quote nha')">Click</button>
+    <button onclick="window.print()">Print this page</button>
+</body>
+</html>
+
+
+
+

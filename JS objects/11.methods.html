@@ -1,0 +1,57 @@
+<!-- Object Methods
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Object Methods</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+
+    <script>
+        const fruits = {
+            fname: "Cay",
+            lname: "Coi",
+            lang: "EN"
+        }
+        const copy = Object.create(fruits);
+        document.getElementById("demo").innerHTML = 'const copy = Object.create(fruits) -> ' + copy.fname + " " + copy.lname;
+        
+        // Object.defineProperty(object, property, descriptor) -> change a property value
+        Object.defineProperty(copy, "lang", {value : "VN"});
+        document.getElementById("demo1").innerHTML = ' Object.defineProperty(copy, "lang", {value : "VN"}) -> ' + copy.lang;
+        
+        // getOwnPropertyDescriptor -> access property
+        x = Object.getOwnPropertyDescriptor(copy, 'lang')
+        document.getElementById("demo2").innerHTML = "x = Object.getOwnPropertyDescriptor(copy, 'lang') -> " + x.value;
+        
+        // getOwnPropertyNames -> return all properties as an array
+        y = Object.getOwnPropertyNames(fruits);
+        document.getElementById("demo3").innerHTML = y;
+        z = Object.getOwnPropertyNames(copy);
+        document.getElementById("demo4").innerHTML = z;
+
+        // accessing the prototype
+        document.getElementById("demo5").innerHTML = Object.getPrototypeOf(fruits);
+
+        class Dung{
+            myFunction() {
+
+            }
+            myFunction2() {
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- JavaScript Date Objects
+- Creating
+new Date()
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+new Date(milliseconds)
+new Date(date string)
+Ex:
+const d = new Date() -> return current days and time
+- Note:
++ JavaScript counts months from 0 to 11
++ Specifying a month higher than 11, will not result in an error but add the overflow to the next year
+    const d = new Date(2018, 15, 24, 10, 33, 30);
+==  const d = new Date(2019, 3, 24, 10, 33, 30);
++ The date the same month
+   const d = new Date(2018, 5, 35, 10, 33, 30);
+== const d = new Date(2018, 6, 5, 10, 33, 30);
++ One day (24 hours) is 86 400 000 milliseconds.
++ Adding one parameter it will be treated as milliseconds
++ Zero time is January 01, 1970 00:00:00 UTC.
+- new Date(dateString)
+const d = new Date("October 13, 2014 11:13:00");
+- Display dates
++ Default: Wed Jun 01 2022 18:59:54 GMT+0700 (Indochina Time)
++ toString(): it is automatically converted to a string
+-> Wed, 01 Jun 2022 12:23:04 GMT
++ toUTCString(): converts a date to a UTC string (a date display standard).
+-> Wed, 01 Jun 2022 12:25:18 GMT (Greenwich Mean Time Zone [Giờ chuẩn Greenwich]) #Greenwich is a borough in London
++ toDateString(): converts a date to a more readable format
+-> Wed Jun 01 2022
++ toISOString():  converts a Date object to a string, using the ISO standard format
+-> 2022-06-01T12:25:26.753Z (International Organization for Standardization)
+-->

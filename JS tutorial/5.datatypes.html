@@ -1,0 +1,63 @@
+<!-- JavaScript Data Types
+- Content
++ Numbers, strings, objects and more
+let x = {firstName:"Hanh", lastName:"Ngo"} // object
+let x = 16 + "Hanh"; // 16Hanh
+let x = "Hanh" + 123 // Hanh123
+let x = 16 + 4 + "Hanh" // 20Hanh
+let x = "Hanh" + 16 + 4 // Hanh164
+
++ JS types are dynamic
+let x; // undefined
+x = 5; // number
+x = "Hanh" // string
+
++ Single quotes inside double quotes and vice versa 
+let text1 = "It's cat";
+let text2 = "Hello 'Hanh'";
+let text3 = 'Hello "Hanh"'
+
++ Numbers
+let x1 = 34.00; // return 34
+let x2 = 34; // return 34
+let x3 = 1.2 
+
++ Scientific (exponential) notation:
+let y = 123e5; // return 12300000
+let z = 123e-5; // return 0.00123
+
++ Booleans: true or false
+
++ Arrays
+const cars = ["hello","hi"]
+
++ Objects
+const person = {firstName:"Hanh", lastName:"Ngo"}
+
++ Typeof
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <script>
+        // arrays
+        const name = ["Ngo", "Thi", "Hanh"];
+
+        document.getElementById("demo").innerHTML
+        = "Test array " + name[0]
+        // objects
+        const person = {
+            firstName : "Hanh",
+            lastName : "Ngo",
+            city : "Da Nang"
+        };
+
+        document.getElementById("demo1").innerHTML
+        = 
+        person.firstName +" " + person.lastName + " is living " + person.city;
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- Maps
+- has return true if a key exists in a map
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Maps</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+
+    <script>
+        // create a new map
+        const fruits = new Map([
+            ["orange", 100],
+            ["apples", 200],
+            ["bananas", 400]
+        ]);
+        document.getElementById("demo").innerHTML = 'fruits.get("orange") -> ' + fruits.get("orange");
+        fruits.set ("orange", 400);
+        document.getElementById("demo1").innerHTML = 'fruits.set ("orange", 400) -> ' + fruits.get("orange");
+        fruits.delete("apples");
+        document.getElementById("demo2").innerHTML = 'fruits.delete("apples") -> ' + fruits.get("apples");
+        fruits.clear();
+        document.getElementById("demo3").innerHTML = 'fruits.clear() -> fruits.size -> ' + fruits.size;
+        document.getElementById("demo4").innerHTML = 'fruits.has("apples") -> ' + fruits.has("apples")
+
+        const leafs = new Map();
+        leafs.set("leaf1", 200);
+        leafs.set("leaf2", 800);
+        leafs.set("leaf3", 700);
+        document.getElementById("demo5").innerHTML = 'leafs.get("leaf1") -> ' + leafs.get("leaf1");
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- Display Objects
+- Displaying the Object Properties by name
+- Displaying the Object Properties in a Loop
+- Displaying the Object using Object.values()
+- Displaying the Object using JSON.stringify()
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Display</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        // object.values()
+        const person = {
+            name: "John",
+            age: function () {return 30;}, // can not stringify functions
+            // (must to convert the funct into strings before stringifying)
+            city: "New York",
+            today: new Date()
+        };
+        const array = Object.values(person);
+        document.getElementById("demo").innerHTML = "Object.values(person) -> " + array;
+        document.getElementById('demo1').innerHTML =" typeof array -> " +  typeof array;
+        
+        // JSON.stringify() -> covert Object to JSON
+        person.age = person.age.toString();
+        let myString = JSON.stringify(person);
+        document.getElementById("demo2").innerHTML = 'JSON.stringify(person) -> ' + myString
+        
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        document.getElementById("demo2").innerHTML = JSON.stringify(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!-- JavaScript Array Iteration
+- forEach()
++ Calls a function once for each array element
+- map()
++ Create a bew array by performing a function on each array element
++ Doesn't execute the function for array elements without values
++ Doesn't change the original array
+- filter
++ Create a new array with array elements that passes a test
+- reduce() -> work from left to right, doesn't reduce the original array
+- reduceRight() -> work from right to left, doesn't reduce the original array
+- every()
++ Check if all array values pass a test
+- some()
++ Check if some array values pass a test 
+- indexOf() 
++ Searches an array for an element value and returns its position
++ Array.indexOf() returns -1 if the item is not found
++ If the item is present more than once, it returns the position of the first occurrence.
+Syntax: array.indexOf(item, start) -> start: where to start the search
+- find()
++ Returns the value of the first array element that passes a test function
+- findIndex()
++ Returns the index of the first array element...
+- from()
++ Returns an array object from any object with a length property or any iterable object
+- keys()
++ Returns an array iterator object with the keys of an array
+- entries()
++ Returns an array iterator object with key/value pairs
++ Doesn't change the original array
+- includes()
++ Allows us to check if an element is present in an array (including NaN, unlike indexOf)
+Syntax: array.includes(search-item)
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Array Iteration</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <p id = "demo10"></p>
+    <p id = "demo11"></p>
+    <p id = "demo12"></p>
+    <p id = "demo13"></p>
+    <p id = "demo14"></p>
+    <p id = "demo15"></p>
+    <p id = "demo16"></p>
+    <p id = "demo17"></p>
+    <p id = "demo18"></p>
+
+    <script>
+        // Array forEach
+        const numbers =  [45, 4, 9, 16, 25];
+        let txt = "";
+        function myFunction (value, index, array) {
+            txt += value + "<br>";
+        }  
+        numbers.forEach(myFunction); 
+        document.getElementById("demo").innerHTML = txt
+
+        // Array map (index and array parameters can be omitted)
+        const numbers2 =  [45, 4, 9, 16, 25];
+        const numbers3 = numbers2.map(myFunction2);
+        document.getElementById("demo1").innerHTML = numbers3;
+        function myFunction2(value, index, array) {
+            return value * 2;
+        }
+
+        // Array filter
+        const numbers4 =  [45, 4, 9, 16, 25];
+        const over18 = numbers4.filter(myFunction3);
+        document.getElementById("demo2").innerHTML = "numbers4.filter(myFunction3) " + over18;
+        function myFunction3(value, index, array) {
+            return value > 18;
+        }
+
+        // Array reduce()
+        const numbers5 =  [45, 4, 9, 16, 25];
+        function myfunct ( accumulator, currentValue, currentIndex, originalArray) {
+            return accumulator + currentValue;
+        }
+        var total = numbers5.reduce(myfunct, 0);
+        document.getElementById("demo3").innerHTML = "numbers5.reduce(myfunct, 0) " + total
+
+        // Array every()
+        const numbers6 =  [45, 4, 9, 16, 25];
+        const over19 = numbers6.every(myFunction4);
+        document.getElementById("demo4").innerHTML = "numbers4.every(myFunction4) " + over19;
+        function myFunction4(value, index, array) {
+            return value > 19;
+        }
+
+        // Array some()
+        const numbers7 =  [45, 4, 9, 16, 25];
+        const over20 = numbers6.some(myFunction5);
+        document.getElementById("demo5").innerHTML = "numbers5.some(myFunction5) " + over20;
+        function myFunction5(value, index, array) {
+            return value > 20;
+        }
+
+        // Array indexOf()
+        const fruits = ["orange", "lemon", "water melon"]
+        document.getElementById("demo6").innerHTML = "fruits.indexOf('lemon', 0) " + fruits.indexOf("lemon", 0)
+
+        // Array find()
+        const numbers8 =  [45, 4, 9, 16, 25];
+        const over21 = numbers8.find(myFunction8);
+        document.getElementById("demo7").innerHTML = "numbers8.find(myFunction8) " + over21;
+        function myFunction8(value, index, array) {
+            return value > 21;
+        }
+
+        // Array findIndex()
+        const numbers9 =  [45, 4, 9, 16, 25];
+        const over22 = numbers9.findIndex(myFunction9);
+        document.getElementById("demo8").innerHTML = "numbers9.findIndex(myFunction9) " + over22;
+        function myFunction9(value, index, array) {
+            return value > 21;
+        }
+
+        // Array.from()
+        const myArr = Array.from("ABCNDK"); // returns an array
+        document.getElementById("demo9").innerHTML = "myArr = Array.from(\"ABCNDK\") " + myArr
+
+        // Array keys()
+        const fruits2 = ["orange", "lemon", "water melon"];
+        const key = fruits2.keys();
+        let text2 = "";
+        for (let x of key) {
+            text2 += x + "<br>"
+        }
+        document.getElementById("demo10").innerHTML = "const key = fruits2.keys(); " + "<br>" + text2;
+
+        // Array entries()
+        const fruits3 = ["orange", "lemon", "water melon"];
+        const key3 = fruits3.entries();
+        let text3 = "";
+        for (let x of key3) {
+            text3 += x + "<br>"
+        }
+        document.getElementById("demo11").innerHTML = "const key3 = fruits3.entries(); " + "<br>" + text3;
+
+        // Array includes()
+        const fruits4 = ["orange", "lemon", "water melon"];
+        document.getElementById("demo12").innerHTML = "fruits4.includes('lemon') " + fruits4.includes("lemon")
+
+    </script>
+</body>
+</html>

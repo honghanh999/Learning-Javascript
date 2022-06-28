@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+
+    <script>
+        const allData = {}
+        fetch('https://629f342c461f8173e4e3e628.mockapi.io/api/users')
+        .then(res => res.json())
+        .then(data => {
+            allData.users = data
+            for (let user of data){
+                // console.log(user.name);
+            }    
+        })
+
+        fetch('https://629f342c461f8173e4e3e628.mockapi.io/api/posts')
+        .then(res => res.json())
+        .then(data => {
+            allData.posts = data
+            const greater = [];
+            const less = [];
+            
+            const filGreater = data.filter(function(post) {
+                return post.scope > 50000;
+            }) 
+            // console.log(filGreater);
+                
+            const filLess = data.filter(function(post) {
+                return post.scope <= 50000;
+            })
+            // console.log(filLess);
+
+            for (let post of data){
+                // toan tu 3 ngoi (Ternary operator)
+                // post.scope > 50000 ? post.isGreater = true : post.isGreater = false;
+                // post.isGreater = post.scope > 50000 ? true : false
+                post.isGreater = !!post.scope > 50000
+                // if (post.scope > 50000) {
+                //     // greater.push(post); 
+                //     post.isGreater = true;
+
+                // } else {
+                //     // less.push(post);
+                //     post.isGreater = false;
+                // }
+            }
+
+            console.log(data);
+            console.log(greater);
+            console.log(less);
+
+            data.sort((function(a,b) {
+                return a.scope - b.scope
+            }));
+            // console.log(data);
+
+            for (let post of data) {
+                // console.log(post.scope);
+            }
+        
+
+            
+            
+            
+        })
+        
+        console.log({ allData });
+    
+        // allData = {
+        //     users: [],
+        //     posts: []
+        // }
+    </script>
+</body>
+</html>

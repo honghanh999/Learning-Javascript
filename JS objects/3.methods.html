@@ -1,0 +1,46 @@
+<!-- Methods
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Methods</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        // accessing
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+                }
+        };
+        document.getElementById("demo").innerHTML = "person.fullName() -> " + person.fullName();
+        // return function definition
+        document.getElementById("demo1").innerHTML = "person.fullName -> " + person.fullName;
+    
+        // adding
+        person.mail = function () {
+            return this.firstName + "@gmail.com";
+        }
+        document.getElementById("demo2").innerHTML = "person.mail() -> " + person.mail();
+    
+        // using built-in methods
+        let message = "hello nha";
+        let x = message.toUpperCase();
+        document.getElementById("demo3").innerHTML = "message.toUpperCase() -> " + x;
+    </script>
+</body>
+</html>

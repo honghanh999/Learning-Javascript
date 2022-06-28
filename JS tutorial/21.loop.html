@@ -1,0 +1,92 @@
+<!-- 
+- For Loop
++ Syntax:
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
++ Using semicolon ";" if add < 3 statement
+- For in loop
++ Syntax
+for (key in object) {
+  // code block to be executed
+}
+- For of loop
+for (variable of iterable) {
+  // code block to be executed
+}
+- While
++ The while loop loops through a block of code as long as 
+a specified condition is true
++ Syntax
+while (condition) {
+  // code block to be executed
+}
++ Example
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+- Do while
++ The example below uses a do while loop.
+The loop will always be executed at least once, 
+even if the condition is false, because the code block
+is executed before the condition is tested
++ Syntax
+do {
+  // code block to be executed
+}
+while (condition);
++ Ex:
+do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 10);
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+
+    <script>
+        // for in
+        const person = {fname:"Hanh", lname:"Ngo"};
+        let text = "";
+        for (let x in person) {
+            text += person[x];
+            document.getElementById("demo").innerHTML = "for (let x in person) " + text
+        }
+        // for of
+        const cars = ["bcc", "sab", "dcr"];
+        let type = "";
+        for (let x of cars) {
+            type += x;
+            document.getElementById("demo1").innerHTML = "for (let x of cars) " + type
+
+        }
+
+        // looping over a string
+        let language = "JavaScript";
+
+        let text2 = "";
+        for (let x of language) {
+            text2 += x;
+            document.getElementById("demo2").innerHTML = "for (let x of language) " + text2
+
+        }
+        
+        // while loop
+        let show = "";
+        let i = 0;
+        while (i<10) {
+          show += i;
+          i++;
+
+        }
+        document.getElementById("demo3").innerHTML = show
+    </script>
+</body>
+</html>

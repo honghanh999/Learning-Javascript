@@ -1,0 +1,173 @@
+<!--
+- Implicit Conversion
++ to String
+a = '3' + 2; -> return "32"
+a = '3' + true; -> return "3true"
+a = '3' + undefined; -> return "3undefined"
+a = '3' + null; -> return "3null"
++ to Number
+a = '4' - '2' -> return 2
+a = '4' - 2 ->  return 2
+a = '4' * 2 -> return 8
+a = '4' / 2 -> return 2
++ using + - / * with string -> return NaN
+a = "hello" - "nha" -> return NaN
+a = "4" - "hello" -> return NaN
++ null -> number
+a = 5 + null -> return 5
+a = 5 - null -> return 5
++ undefined combine with number, boolean and null
+a = 5 + undefined -> return NaN
+a = 5 - undefined -> return NaN
+a = true + undefined -> return NaN
+a = null + undefined -> return NaN
+- Explicit Conversion
++ to Number
+a = Number('123') -> return 123
+a = Number('123e-1') -> return 12.4
+a = Number(true) -> return 1
+a = Number(false) -> return 0
+a = Number(Null) -> return 0
+a = Number("") -> return 0
+a = Number("Hello") -> return NaN
+a = Number(undefined) -> return NaN
+a = Number(NaN) -> return NaN
+a = parseInt("20.88") -> return 20
+a = parseFloat("20.88") -> return 20.88
+a = - "20.02" -> return -20.02
+a = Math.floor('20.02') -. return 20
++ to String: String() or toString()
+a = String(321) -> return "321"
+a = (123).toString() -> return 
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+    <p id = "demo8"></p>
+    <p id = "demo9"></p>
+    <script>
+        a = Number('123e-1')
+        document.getElementById("demo").innerHTML = a;
+        b = Number(" ");
+        document.getElementById("demo1").innerHTML = b;
+        c = Number("Hello")
+        document.getElementById("demo2").innerHTML = c;
+        d = parseInt('20.88')
+        document.getElementById("demo3").innerHTML = d;
+        e = parseFloat('20.88')
+        document.getElementById("demo4").innerHTML = e;
+        f = -'20.75'
+        document.getElementById("demo5").innerHTML = f;
+        k = Math.floor(20.02)
+        console.log('ｋ', k);
+        document.getAnimations("demo6").innerHTML = k;
+        g = (123).toString()
+        document.getElementById("demo7").innerHTML = g;
+
+        const number = 2
+        const convert = Math.floor(number)
+        console.log(convert);
+        const minus = number - convert
+        console.log(minus)
+        if (minus > 0) {
+            console.log("This isn't a positive integers")
+        } else {
+            console.log("This is a positive integers")
+        }
+        // if (number>=0 && check != "float") {
+        //     console.log("This is a positive integers")
+        // } else {
+        //     console.log("This isn't a positive integers")
+        // }
+
+        const number2 = 2.2
+        if (number2 % 1 == 0) {
+            console.log("This is a positive integers")
+        } else {
+            console.log("This isn't a positive integers")
+        }
+
+        const m = 4
+        const n = 5
+        x = -n/m
+        console.log(x);
+
+        const arr = [5, 2, 4]
+        let sum = 0
+        
+        // for (let i of arr) {
+        //     console.log(i);
+        //     sum += i
+        // }
+        // console.log(sum);
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     sum += arr[i];
+        // }
+        // console.log(sum);
+
+        const numberCheck = 0
+        if (numberCheck % 2 == 0) {
+            console.log("even number");
+        } else {
+            console.log("odd number");
+        }
+
+        const emptyArr = [
+            {
+            fname: "Hoa",
+            lname: "Canh",
+            city: "HCM"
+            },
+            {
+            fname: "La",
+            lname: "Cay",
+            city: "HCM"
+            }
+        ]
+        emptyArr.push({
+            fname: "Hanh",
+            lname: "Ngo",
+            city: "DN"
+        })
+
+        for (let element of emptyArr) {
+            console.log(element);
+        }
+        console.log(emptyArr);
+        console.log(emptyArr[0]);
+        emptyArr[0].fname = "Hong"
+        console.log(emptyArr[0]);
+        // emptyArr.pop([0])
+        // delete emptyArr[0]
+        emptyArr.splice(0, 1)
+        console.log(emptyArr);
+        for (let element of emptyArr) {
+            console.log(element);
+        }
+        
+        function deleteItem(index) {
+            const defaultQuality = 1
+            emptyArr.splice(index, defaultQuality)
+        }
+        console.log(deleteItem(0));
+        console.log(emptyArr);
+
+        
+
+
+
+    </script>
+</body>
+</html>

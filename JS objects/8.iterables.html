@@ -1,0 +1,69 @@
+<!-- Iterables
+- Interables objects are objects that can be iterated over with for ... of
+- JS iterators
++ An object becomes an iterator when it implements a next() method
++ The next() method must return an object with two properties:
+    # value (the next value)
+    # done (true of false)
++ Symbol.iterator is a function that returns a next() function
+
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Iterables</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+    <p id = "demo6"></p>
+    <p id = "demo7"></p>
+
+    <script>
+        // Home Made Iterable does not support the for...of statement
+        function myNumbers() {
+            let n = 0;
+            return {
+                next: function() {
+                    n += 5;
+                    return {value: n, done:false};
+                }
+            }
+        }
+        const n = myNumbers();
+        document.getElementById("demo").innerHTML = ' n.next().value -> ' + n.next().value;
+        document.getElementById("demo1").innerHTML =' n.next().value -> ' + n.next().value;
+        document.getElementById("demo2").innerHTML =' n.next().value -> ' + n.next().value;
+
+        // Symbol.iterator
+        myNumbers2 = {};
+        myNumbers2[Symbol.iterator] = function() {
+            let n = 0;
+            done = false;
+            return {
+                next() {
+                    n += 10;
+                    if (n == 100) {done = true}
+                    return {value:n, done:done};
+                }
+            };
+        }
+        text = "";
+        for (const num of myNumbers2) {
+            text += num + '<br>';
+        }
+        document.getElementById("demo3").innerHTML = " text += num -> " + "<br>" + text;
+
+        
+
+
+
+    </script>
+</body>
+</html>

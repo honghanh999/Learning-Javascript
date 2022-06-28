@@ -1,0 +1,54 @@
+<!-- JavaScript Objects
+- Content
++ It contains name:value pair (properties) like property:property value
++ Accessing Object Properties
+objectName.propertyName
+objectName["propertyName"]
+Ex: person.lastName;
+    person["lastName"];
++ Object can alse have methods (are actions that can be performed on objects)
+    # "this" refers to the person object
+    # this.firstName means the firstName property of this
+    # this.firstName means the firstName property of person
+    # Note: In a function, in strict mode, "this" is "undefined"
+    # In an event, "this" refers to the element that received the event 
++ Accessing Object Methods
+    # A method is a function stored as a property
+    # Syntax:
+    objectName.methodName()
+    name = person.fullName();
++ Don't declare Strings, Numbers, and Booleans as Objects
+    # Using keyword "new" -> the variable is created as an object
+    x = new String();
+    y = new Number();
+    z = new Boolean();
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <p id = "demo3"></p>
+    <p id = "demo4"></p>
+    <p id = "demo5"></p>
+
+    <script>
+        const person = {
+            firstName : "Hanh",
+            lastName : "Ngo",
+            id : 1999,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        // display some data from the object
+        document.getElementById("demo").innerHTML
+        = 
+        person.firstName + " + " + person.lastName + " = " + person.fullName();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Boolean
+- Boolean values
+YES / NO
+ON / OFF
+TRUE / FALSE
+- Boolean() function
++ Boolean(10 > 9) -> return true
++ (10 > 9) or 10 > 9 -> return true
+- Everything With a "Value" is True (Any expression (except zero) is true)
+- Everything Without a "Value" is False (The Boolean value of 0 (zero) is false)
+- JavaScript booleans as objects
+let x = false; // typeof x returns boolean
+let y = new Boolean(false); // typeof y returns object
+*** Do not create Boolean objects. The new keyword complicates the code and slows down execution speed.
+*** Comparing two JavaScript objects always return false
+let x = new Boolean(false);
+let y = new Boolean(false);
+x == y -> return false
+x === y -> return false
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Boolean Values</h1>
+    <p id = "demo"></p>
+
+    <script>
+        let x = 10 / "Hello";
+        document.getElementById("demo").innerHTML = x // NaN
+    </script>
+
+</body>
+</html>

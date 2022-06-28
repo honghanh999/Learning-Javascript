@@ -1,0 +1,27 @@
+<!--
+- Date input
++ ISO Date -> "2015-03-25" (The International Standard)
++ Short Date -> "03/25/2015"
++ Long Date -> "Mar 25 2015" or "25 Mar 2015"
+- Date output
++ Wed Jun 01 2022 19:28:52 GMT+0700 (Indochina Time) -> Đông Dương
+- ISO dates
+const d = new Date ("2015-03-23");
+const d = new Date ("2015") -> ISO can be written without month and day
+const d = new Date ("2015-03-25T12:00:00Z");
+*** Date and time is separated with a capital T
+*** UTC time is defined with a capital letter Z.
+const d = new Date("2015-03-25T12:00:00-06:30"); -> remove the Z and add HH:MM
+- JavaScript Short Dates
+const d = new Date("03/25/2015");
+*** "YYYY/MM/DD" and  "DD-MM-YYYY" are undefined -> return NaN
+- JavaScript Long Dates: often using -> ("MMM DD YYYY")
+const d = new Date("Mar 25 2015");
+const d = new Date("25 Mar 2015");
+const d = new Date("January 25 2015");
+*** Commas are ignored. Names are case insensitive
+const d = new Date("JANUARY, 25, 2015");
+- Convert to milliseconds
+let millisecond = Date.parse("March 21, 2012"); -> convert to miliseconds
+const d = new Date(millisecond); -> convert it to a date
+-->

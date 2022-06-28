@@ -1,0 +1,34 @@
+<!-- JavaScript Hoisting
+- Content
++ A variable can be used before it has been declared (var)
++ The block of code is aware of the variable, but it cannot
+be used until it has been declared (let, const)
++ JS only hoists declarations, not initializations
+var x; // Declare x
+x = 5; // Assign 5 to x
+
+var x = 5; // Initialize x
+var y = 7; // Initialize y 
+-> the declaration (var y), the initialization (=7)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>JavaScript Hoisting</h1>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+
+    <script>
+        x = 5
+        elem = document.getElementById("demo");
+        elem.innerHTML = x;
+        var x;
+
+        y = 3;
+        var y;
+        elem2 = document.getElementById("demo1");
+        elem2.innerHTML = y;
+
+    </script>
+</body>
+</html>
